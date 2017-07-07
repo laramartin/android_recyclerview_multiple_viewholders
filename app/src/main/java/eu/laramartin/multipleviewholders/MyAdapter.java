@@ -5,15 +5,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class MyAdapter extends RecyclerView.Adapter {
 
-    private static final int ITEM_TYPE_TITLE = 0;
-    private static final int ITEM_TYPE_CONTENT = 1;
-    private static final int ITEM_TYPE_FOOTER = 2;
+    public static final int ITEM_TYPE_TITLE = 0;
+    public static final int ITEM_TYPE_CONTENT = 1;
+    public static final int ITEM_TYPE_FOOTER = 2;
 
-    List<Item> items;
+    List<Item> items = new ArrayList<>();
+
+    public MyAdapter() {
+        items.add(Item.createTitle("Title"));
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        items.add(Item.createTitle("Title"));
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        items.add(Item.createTitle("Title"));
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        
+        items.add(Item.createContent("Bacon ipsum dolor amet meatball jowl beef pork chop boudin leberkas tenderloin, shoulder ham hock. Corned beef burgdoggen pork loin filet mignon doner. Chicken rump ham porchetta. Biltong pastrami shank meatball."));
+        items.add(Item.createFooter());
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
